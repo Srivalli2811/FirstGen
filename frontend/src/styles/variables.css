@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap");
+
+/* ===========================
+   FIRSTGEN DESIGN SYSTEM v2
+=========================== */
+
+/* ---------- Aurora Theme (Default) ---------- */
+
+:root {
+  /* Brand */
+  --primary: #6d4aff;
+  --primary-dark: #5635ea;
+  --secondary: #ff8a65;
+  --accent: #45b36b;
+
+  /* Backgrounds */
+  --background: #f8f7f4;
+  --surface: #ffffff;
+  --surface-hover: #fcfbf8;
+
+  /* Text */
+  --text: #24213a;
+  --text-light: #5d5b74;
+  --text-muted: #8c8aa5;
+
+  /* Borders */
+  --border: #ebe7f3;
+  --border-dark: #d7d2e8;
+
+  /* Status */
+  --success: #45b36b;
+  --warning: #f6b73c;
+  --danger: #ef5350;
+  --info: #3b82f6;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 10px rgba(36, 33, 58, 0.05);
+
+  --shadow-md: 0 8px 25px rgba(36, 33, 58, 0.08);
+
+  --shadow-lg: 0 20px 45px rgba(36, 33, 58, 0.12);
+
+  /* Radius */
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 30px;
+
+  /* Gradients */
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    #6d4aff 0%,
+    #8867ff 100%
+  );
+
+  --gradient-secondary: linear-gradient(
+    135deg,
+    #ff8a65 0%,
+    #ffb26b 100%
+  );
+
+  --gradient-hero: linear-gradient(
+    135deg,
+    #6d4aff,
+    #8b6cff,
+    #ff8a65
+  );
+
+  /* Animation */
+
+  --transition: all 0.28s ease;
+}
+
+/* ---------- Midnight Theme ---------- */
+
+[data-theme="midnight"] {
+  --primary: #8d78ff;
+  --primary-dark: #745eff;
+  --secondary: #ff9d78;
+  --accent: #55d38a;
+
+  --background: #111320;
+  --surface: #191b2b;
+  --surface-hover: #212438;
+
+  --text: #f6f6fc;
+  --text-light: #d4d4e4;
+  --text-muted: #9ea0b8;
+
+  --border: #2b2f45;
+  --border-dark: #414764;
+
+  --shadow-sm: 0 2px 10px rgba(0,0,0,.2);
+  --shadow-md: 0 8px 25px rgba(0,0,0,.35);
+  --shadow-lg: 0 20px 45px rgba(0,0,0,.45);
+}
+
+/* ---------- Forest Theme ---------- */
+
+[data-theme="forest"] {
+  --primary: #397a5d;
+  --primary-dark: #2f624c;
+  --secondary: #b98546;
+  --accent: #5ca66d;
+
+  --background: #f4f6ef;
+  --surface: #ffffff;
+  --surface-hover: #fafcf8;
+
+  --text: #233327;
+  --text-light: #526256;
+  --text-muted: #7b887d;
+
+  --border: #dfe8dc;
+  --border-dark: #c8d3c4;
+}
+
+/* ---------- Sunset Theme ---------- */
+
+[data-theme="sunset"] {
+  --primary: #ff6b6b;
+  --primary-dark: #f05353;
+  --secondary: #ffb347;
+  --accent: #5fb95f;
+
+  --background: #fff9f6;
+  --surface: #ffffff;
+  --surface-hover: #fffdfa;
+
+  --text: #352529;
+  --text-light: #65545a;
+  --text-muted: #988189;
+
+  --border: #f0dedd;
+  --border-dark: #e3cccc;
+}

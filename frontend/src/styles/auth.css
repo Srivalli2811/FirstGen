@@ -1,0 +1,286 @@
+/* ===========================
+   AUTH PAGES
+=========================== */
+
+.auth-container {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px;
+
+  background:
+    radial-gradient(circle at top left, rgba(109,74,255,.08), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(255,138,101,.08), transparent 40%),
+    var(--background);
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.auth-card {
+
+  width: 100%;
+  max-width: 470px;
+
+  background: rgba(255,255,255,.82);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,.5);
+
+  border-radius: 28px;
+
+  padding: 48px;
+
+  box-shadow: var(--shadow-lg);
+
+  transition: var(--transition);
+
+}
+
+.auth-card:hover{
+transform:translateY(-5px);
+}
+
+/* ===========================
+   LOGO
+=========================== */
+
+.auth-logo{
+
+width:82px;
+height:82px;
+
+margin:auto;
+margin-bottom:28px;
+
+border-radius:24px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:38px;
+
+background:var(--gradient-primary);
+
+color:white;
+
+box-shadow:var(--shadow-md);
+
+animation:floating 5s ease-in-out infinite;
+
+}
+
+/* ===========================
+   TITLE
+=========================== */
+
+.auth-title{
+
+text-align:center;
+
+font-size:2rem;
+
+margin-bottom:10px;
+
+}
+
+.auth-subtitle{
+
+text-align:center;
+
+color:var(--text-muted);
+
+line-height:1.7;
+
+margin-bottom:34px;
+
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+.form-group{
+
+margin-bottom:22px;
+
+}
+
+.form-label{
+
+display:block;
+
+margin-bottom:9px;
+
+font-weight:600;
+
+font-size:.92rem;
+
+color:var(--text);
+
+}
+
+.form-input{
+
+height:54px;
+
+border-radius:14px;
+
+font-size:.95rem;
+
+}
+
+.form-input::placeholder{
+
+color:#a0a0b2;
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.auth-btn{
+
+width:100%;
+
+height:54px;
+
+margin-top:12px;
+
+font-size:1rem;
+
+font-weight:700;
+
+border-radius:14px;
+
+}
+
+/* ===========================
+   ERROR
+=========================== */
+
+.error-box{
+
+margin-bottom:22px;
+
+padding:14px 16px;
+
+border-radius:14px;
+
+background:rgba(239,83,80,.08);
+
+border:1px solid rgba(239,83,80,.25);
+
+color:var(--danger);
+
+font-size:.92rem;
+
+}
+
+/* ===========================
+   DIVIDER
+=========================== */
+
+.auth-divider{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+margin:30px 0;
+
+color:var(--text-muted);
+
+font-size:.85rem;
+
+}
+
+.auth-divider::before,
+.auth-divider::after{
+
+content:"";
+
+flex:1;
+
+height:1px;
+
+background:var(--border);
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.auth-link{
+
+text-align:center;
+
+font-size:.95rem;
+
+color:var(--text-light);
+
+}
+
+.auth-link a{
+
+margin-left:8px;
+
+font-weight:700;
+
+color:var(--primary);
+
+transition:var(--transition);
+
+}
+
+.auth-link a:hover{
+
+color:var(--primary-dark);
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+.auth-container{
+
+padding:22px;
+
+}
+
+.auth-card{
+
+padding:32px 24px;
+
+border-radius:24px;
+
+}
+
+.auth-title{
+
+font-size:1.8rem;
+
+}
+
+.auth-logo{
+
+width:70px;
+height:70px;
+font-size:32px;
+
+}
+
+}

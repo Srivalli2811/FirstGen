@@ -1,0 +1,248 @@
+/* ===========================
+   FIRSTGEN ANIMATIONS
+=========================== */
+
+/* ---------- Fade ---------- */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------- Slide Up ---------- */
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Slide Left ---------- */
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ---------- Slide Right ---------- */
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ---------- Scale ---------- */
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ---------- Float ---------- */
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* ---------- Pulse ---------- */
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 rgba(109,74,255,.2);
+  }
+
+  50% {
+    box-shadow: 0 0 24px rgba(109,74,255,.35);
+  }
+
+  100% {
+    box-shadow: 0 0 0 rgba(109,74,255,.2);
+  }
+}
+
+/* ---------- Gradient ---------- */
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0%;
+  }
+
+  50% {
+    background-position: 100%;
+  }
+
+  100% {
+    background-position: 0%;
+  }
+}
+
+/* ---------- Rotate ---------- */
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===========================
+   Utility Classes
+=========================== */
+
+.fade-in {
+  animation: fadeIn .5s ease;
+}
+
+.slide-up {
+  animation: slideUp .55s ease;
+}
+
+.slide-left {
+  animation: slideLeft .5s ease;
+}
+
+.slide-right {
+  animation: slideRight .5s ease;
+}
+
+.scale-in {
+  animation: scaleIn .4s ease;
+}
+
+.float {
+  animation: floating 4s ease-in-out infinite;
+}
+
+.pulse {
+  animation: pulseGlow 2s infinite;
+}
+
+.rotate {
+  animation: rotate360 8s linear infinite;
+}
+
+/* ===========================
+   Hover Effects
+=========================== */
+
+.hover-lift {
+  transition: var(--transition);
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hover-grow {
+  transition: var(--transition);
+}
+
+.hover-grow:hover {
+  transform: scale(1.03);
+}
+
+.hover-primary {
+  transition: var(--transition);
+}
+
+.hover-primary:hover {
+  color: var(--primary);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 25px rgba(109,74,255,.25);
+}
+
+/* ===========================
+   Gradient Background
+=========================== */
+
+.gradient-bg {
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    #8b6cff,
+    var(--secondary)
+  );
+
+  background-size: 300% 300%;
+  animation: gradientMove 8s ease infinite;
+}
+
+/* ===========================
+   Smooth Card Animation
+=========================== */
+
+.card {
+  animation: slideUp .45s ease;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.btn-primary,
+.btn-secondary {
+  transition: var(--transition);
+}
+
+.btn-primary:active,
+.btn-secondary:active {
+  transform: scale(.97);
+}
+
+/* ===========================
+   Inputs
+=========================== */
+
+.form-input,
+.form-select,
+textarea {
+  transition: var(--transition);
+}

@@ -1,0 +1,193 @@
+/* ===========================
+   NAVBAR
+=========================== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: rgba(255,255,255,.88);
+  backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid var(--border);
+
+  height: 74px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 40px;
+
+  transition: var(--transition);
+}
+
+/* ---------- Logo ---------- */
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-icon {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 14px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--gradient-primary);
+
+  color: white;
+
+  font-size: 22px;
+
+  box-shadow: var(--shadow-md);
+}
+
+.brand-text h1 {
+  font-size: 1.35rem;
+  margin: 0;
+}
+
+.brand-text span {
+  font-size: .8rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Navigation ---------- */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-link {
+  padding: 11px 18px;
+
+  border-radius: 12px;
+
+  font-weight: 600;
+
+  color: var(--text-light);
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  background: rgba(109,74,255,.08);
+  color: var(--primary);
+}
+
+.nav-link.active {
+  background: var(--gradient-primary);
+  color: white;
+}
+
+/* ---------- User ---------- */
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-avatar {
+
+  width: 46px;
+  height: 46px;
+
+  border-radius: 50%;
+
+  background: var(--gradient-primary);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+
+  font-weight: 700;
+
+  font-size: 18px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: 700;
+}
+
+.user-role {
+  color: var(--text-muted);
+  font-size: .82rem;
+}
+
+/* ---------- Logout ---------- */
+
+.logout-btn {
+
+  border: none;
+
+  background: #fff3f3;
+
+  color: var(--danger);
+
+  padding: 10px 18px;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: var(--transition);
+}
+
+.logout-btn:hover {
+  background: var(--danger);
+  color: white;
+}
+
+/* ---------- Mobile ---------- */
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width:900px){
+
+.navbar{
+padding:0 18px;
+}
+
+.navbar-links{
+display:none;
+}
+
+.mobile-menu{
+display:block;
+font-size:28px;
+cursor:pointer;
+}
+
+.user-info{
+display:none;
+}
+
+.logout-btn{
+display:none;
+}
+
+}
