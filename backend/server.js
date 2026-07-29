@@ -18,12 +18,19 @@ app.use(cors({
 
 app.use(express.json());
 
-app.use('/auth', authRoutes);
-app.use('/mood', moodRoutes);
-app.use('/chat', chatRoutes);
-app.use('/counselor', counselorRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/mood', moodRoutes);
+app.use('/api/chat', chatRoutes);
+app.use('/api/counselor', counselorRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+});
+
+const User = require("./models/User");
+
+app.get("/debug/users", async (req, res) => {
+  const users = await User.find().select("-password");
+  res.json(users);
 });

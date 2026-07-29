@@ -50,6 +50,7 @@ function Chatbot() {
         {
           role: "assistant",
           content:
+            err.response?.data?.reply ||
             "Sorry, something went wrong. Please try again.",
         },
       ]);

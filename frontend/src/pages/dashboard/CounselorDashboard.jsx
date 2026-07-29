@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import api from "../../utils/api";
+import "../../styles/CounselorDashboard.css";
 
 const moods = {
   1: { emoji: "😢", label: "Very Low", color: "#ef5350" },
@@ -56,26 +57,35 @@ function CounselorDashboard() {
   return (
     <div className="counselor-page">
 
-      <div className="dashboard-hero card">
+      <div className="dashboard-hero">
 
-        <div className="hero-content">
+        <div className="counselor-profile">
 
-          <h1>
-            Counselor Dashboard
-          </h1>
+          <div className="counselor-avatar">
+            {user?.name?.charAt(0).toUpperCase()}
+          </div>
 
-          <p>
-            Welcome back, <strong>{user?.name}</strong>.
-            Monitor students, identify burnout risks,
-            and review mood history.
-          </p>
+          <div className="hero-content">
+            <h1>Counselor Dashboard</h1>
 
+            <p>
+              Welcome back, <strong>{user?.name}</strong>
+            </p>
+
+            <div className="hero-subinfo">
+              <span>🧑‍💼 Counselor</span>
+              <span>|</span>
+              <span>{students.length} Students</span>
+              <span>|</span>
+              <span>
+                {students.filter((s) => s.burnoutAlert).length}{" "}
+                Active Alerts
+              </span>
+            </div>
+          </div>
         </div>
 
-        <button
-          className="btn btn-outline"
-          onClick={logout}
-        >
+        <button className="btn-secondary" onClick={logout}>
           Logout
         </button>
 
@@ -106,6 +116,20 @@ function CounselorDashboard() {
           </div>
         </div>
 
+        <div className="stat-card">
+          <div className="stat-icon">😊</div>
+          <div className="stat-value">{studentMoods.length}</div>
+          <div className="stat-label">Mood Records</div>
+        </div>
+
+        <div className="stat-card">
+          <div className="stat-icon">👤</div>
+          <div className="stat-value">
+            {selectedStudent ? "1" : "0"}
+          </div>
+          <div className="stat-label">Viewing</div>
+        </div>
+
       </div>
 
       <div className="counselor-grid">
@@ -120,8 +144,22 @@ function CounselorDashboard() {
 
             {students.length === 0 ? (
 
-              <div className="empty-moods">
-                No students registered.
+              <div className="empty-selection">
+
+                <div className="empty-icon">
+                  🧑‍🤝‍🧑
+                </div>
+
+                <h3>
+                  No students yet
+                </h3>
+
+                <p>
+                  Once students register, you'll be able to
+                  monitor their moods, detect burnout risks,
+                  and review their history here.
+                </p>
+
               </div>
 
             ) : (
@@ -143,16 +181,15 @@ function CounselorDashboard() {
 
                   <div className="student-top">
 
-                    <div>
+                    <div className="student-identity">
+                      <div className="student-avatar">
+                        {student.name.charAt(0).toUpperCase()}
+                      </div>
 
-                      <h4>
-                        {student.name}
-                      </h4>
-
-                      <p>
-                        {student.email}
-                      </p>
-
+                      <div>
+                        <h4>{student.name}</h4>
+                        <p>{student.email}</p>
+                      </div>
                     </div>
 
                     {student.burnoutAlert && (
@@ -198,7 +235,7 @@ function CounselorDashboard() {
             <div className="empty-selection">
 
               <div className="empty-icon">
-                👈
+                📊
               </div>
 
               <h3>
@@ -206,8 +243,8 @@ function CounselorDashboard() {
               </h3>
 
               <p>
-                Choose a student from the list
-                to view mood history.
+                Click on any student from the left panel to
+                view their mood history and burnout analysis.
               </p>
 
             </div>
@@ -216,9 +253,61 @@ function CounselorDashboard() {
 
             <>
 
-              <h2 className="card-title">
-                {selectedStudent.name}
-              </h2>
+              <div className="student-detail-header">
+
+                <div className="student-avatar-large">
+                  {selectedStudent.name.charAt(0).toUpperCase()}
+                </div>
+
+                <div>
+                  <h2>{selectedStudent.name}</h2>
+                  <p>{selectedStudent.email}</p>
+                </div>
+
+              </div>
+
+              <div className="student-summary-grid">
+
+                <div className="summary-item">
+                  <span className="summary-label">Current Mood</span>
+                  <span className="summary-value">
+                    {selectedStudent.lastMoodScore ? (
+                      <>
+                        {moods[selectedStudent.lastMoodScore].emoji}{" "}
+                        {moods[selectedStudent.lastMoodScore].label}
+                      </>
+                    ) : (
+                      "No data"
+                    )}
+                  </span>
+                </div>
+
+                <div className="summary-item">
+                  <span className="summary-label">Last Active</span>
+                  <span className="summary-value">
+                    {selectedStudent.lastMoodDate
+                      ? new Date(selectedStudent.lastMoodDate).toLocaleDateString()
+                      : "No data"}
+                  </span>
+                </div>
+
+                <div className="summary-item">
+                  <span className="summary-label">Burnout Risk</span>
+                  <span
+                    className={`summary-value ${
+                      selectedStudent.burnoutAlert ? "risk-high" : "risk-low"
+                    }`}
+                  >
+                    {selectedStudent.burnoutAlert ? "High" : "Low"}
+                  </span>
+                </div>
+
+                <div className="summary-item">
+                  <span className="summary-label">Total Mood Entries</span>
+                  <span className="summary-value">{studentMoods.length}</span>
+                </div>
+
+              </div>
 
               {selectedStudent.burnoutAlert && (
 
@@ -237,64 +326,82 @@ function CounselorDashboard() {
 
               )}
 
-              <div className="timeline">
+              {studentMoods.length === 0 ? (
 
-                {studentMoods.map((mood) => (
+                <div className="empty-selection">
+                  <div className="empty-icon">📝</div>
 
-                  <div
-                    key={mood._id}
-                    className="timeline-item"
-                  >
+                  <h3>No Mood Records</h3>
+
+                  <p>
+                    This student hasn't logged any moods yet.
+                  </p>
+                </div>
+
+              ) : (
+
+                <div className="timeline">
+
+                  {studentMoods.map((mood) => (
 
                     <div
-                      className="timeline-dot"
-                      style={{
-                        background:
-                          moods[mood.score].color,
-                      }}
-                    />
+                      key={mood._id}
+                      className="timeline-item"
+                    >
 
-                    <div className="timeline-card">
+                      <div
+                        className="timeline-dot"
+                        style={{
+                          "--dot-color": moods[mood.score].color,
+                        }}
+                      />
 
-                      <div className="timeline-mood">
+                      <div className="timeline-card">
 
-                        <span className="timeline-emoji">
-                          {
-                            moods[mood.score]
-                              .emoji
-                          }
-                        </span>
+                        <div className="timeline-mood">
 
-                        <div>
-
-                          <h4>
+                          <span className="timeline-emoji">
                             {
                               moods[mood.score]
-                                .label
+                                .emoji
                             }
-                          </h4>
-
-                          <span>
-                            {mood.date}
                           </span>
+
+                          <div>
+
+                            <h4>
+                              {
+                                moods[mood.score]
+                                  .label
+                              }
+                            </h4>
+
+                            <span>
+                              {new Date(mood.date).toLocaleString([], {
+                                dateStyle: "medium",
+                                timeStyle: "short",
+                              })}
+                            </span>
+
+                          </div>
 
                         </div>
 
-                      </div>
+                        {mood.note && (
+                          <p className="timeline-note">
+                            {mood.note}
+                          </p>
+                        )}
 
-                      {mood.note && (
-                        <p className="timeline-note">
-                          {mood.note}
-                        </p>
-                      )}
+                      </div>
 
                     </div>
 
-                  </div>
+                  ))}
 
-                ))}
+                </div>
 
-              </div>
+              )}
 
             </>
 

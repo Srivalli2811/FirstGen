@@ -230,47 +230,75 @@ padding:22px;
 
 }
 
-.mood-option{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:10px;
-  background:var(--surface);
-  border:2px solid var(--border);
-  border-radius:18px;
-  padding:22px 10px;
-  cursor:pointer;
-  transition:var(--transition);
-}
-/* ===== FORCE FIX ===== */
+/* Add these to dashboard.css — they replace the inline styles removed from CounselorDashboard.jsx */
 
-.mood-grid{
-    display:grid !important;
-    grid-template-columns:repeat(5,minmax(120px,1fr)) !important;
-    gap:18px !important;
-    margin:28px 0 !important;
-    width:100%;
+.counselor-profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.mood-option{
-    width:100%;
-    min-height:130px;
-    display:flex !important;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    gap:12px;
-    border:2px solid var(--border);
-    border-radius:18px;
-    background:#fff;
-    cursor:pointer;
+.counselor-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 28px;
+  flex-shrink: 0;
 }
 
-.mood-emoji{
-    font-size:2rem;
+.hero-subinfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
 }
 
-.mood-title{
-    font-size:1rem;
-    font-weight:600;
+.student-identity {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.student-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.student-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.student-avatar-large {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 24px;
+  flex-shrink: 0;
 }

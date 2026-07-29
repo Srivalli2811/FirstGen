@@ -8,6 +8,7 @@ import MoodLogger from "./MoodLogger";
 import MoodHistory from "./MoodHistory";
 import Chatbot from "./Chatbot";
 import ScholarshipFinder from "./ScholarshipFinder";
+import "../../styles/dashboard.css";
 
 function Dashboard() {
   const { user } = useAuth();
