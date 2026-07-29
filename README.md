@@ -1,37 +1,35 @@
-# 🎓 FirstGen - AI-Powered Student Support Platform
+# 🎓 FirstGen – AI-Powered Student Support Platform
 
-> Empowering first-generation college students through AI-powered career guidance, scholarship discovery, mental wellness support, and counselor assistance.
+> AI-powered MERN platform helping first-generation college students with career guidance, scholarship discovery, mental wellness support, and counselor assistance.
 
 ## 🌐 Live Demo
 
-**Frontend:** https://first-gen-nine.vercel.app
-
-**Backend API:** https://firstgen-backend.onrender.com
+- **Frontend:** https://first-gen-nine.vercel.app
+- **Backend API:** https://firstgen-backend.onrender.com
 
 ---
 
 ## 📖 Overview
 
-FirstGen is a full-stack MERN application designed to support first-generation college students by providing a centralized platform for academic guidance, mental wellness, scholarship discovery, and career assistance.
+FirstGen is a full-stack MERN application designed to support first-generation college students through a centralized platform for academic guidance, mental wellness, scholarship discovery, and career assistance.
 
-The platform includes role-based dashboards for Students and Counselors, secure authentication, AI-powered assistance, mood tracking, and burnout detection.
+The platform features secure role-based authentication for Students and Counselors, AI-powered guidance, mood tracking, burnout detection, and scholarship exploration. It is deployed using **Vercel**, **Render**, and **MongoDB Atlas**.
 
 ---
 
 ## ✨ Features
 
-### 👨‍🎓 Student
+### 👨‍🎓 Student Portal
 
-- Secure Signup & Login (JWT Authentication)
+- Secure Signup & Login using JWT Authentication
 - Personalized Dashboard
-- AI Career Guidance Chatbot
-- Mood Tracking
-- Mood History & Analytics
+- AI-Powered Career Guidance Chatbot
+- Mood Tracking & Mood History
 - Burnout Detection
 - Scholarship Explorer
 - Profile Management
 
-### 👩‍🏫 Counselor
+### 👩‍🏫 Counselor Portal
 
 - Secure Login
 - Student Dashboard
@@ -60,7 +58,7 @@ The platform includes role-based dashboards for Students and Counselors, secure 
 - JWT Authentication
 - bcrypt.js
 
-### AI
+### AI Integration
 
 - OpenAI API
 
@@ -74,7 +72,7 @@ The platform includes role-based dashboards for Students and Counselors, secure 
 
 ## 📁 Project Structure
 
-```
+```text
 FirstGen
 │
 ├── frontend
@@ -83,19 +81,20 @@ FirstGen
 │   └── package.json
 │
 ├── backend
+│   ├── config
 │   ├── controllers
-│   ├── routes
 │   ├── middleware
 │   ├── models
-│   ├── config
-│   └── server.js
+│   ├── routes
+│   ├── server.js
+│   └── package.json
 │
 └── README.md
 ```
 
 ---
 
-## 🔐 Authentication
+## 🔐 Authentication & Security
 
 - JWT-based Authentication
 - Password Hashing using bcrypt
@@ -104,15 +103,15 @@ FirstGen
 
 ---
 
-## 🚀 Installation
+## 🚀 Getting Started
 
-### Clone Repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/Srivalli2811/FirstGen.git
 ```
 
-### Backend
+### Backend Setup
 
 ```bash
 cd backend
@@ -120,7 +119,7 @@ npm install
 npm start
 ```
 
-### Frontend
+### Frontend Setup
 
 ```bash
 cd frontend
@@ -130,9 +129,9 @@ npm run dev
 
 ---
 
-## ⚙ Environment Variables
+## ⚙️ Environment Variables
 
-Backend `.env`
+### Backend (`.env`)
 
 ```env
 PORT=
@@ -142,7 +141,7 @@ OPENAI_API_KEY=
 FRONTEND_URL=
 ```
 
-Frontend `.env`
+### Frontend (`.env`)
 
 ```env
 VITE_API_URL=
@@ -150,27 +149,25 @@ VITE_API_URL=
 
 ---
 
-## 📸 Screenshots
+## ❤️ Built With
 
-> Add screenshots here after deployment.
-
-- Login Page
-- Student Dashboard
-- Counselor Dashboard
-- AI Chatbot
-- Mood Tracker
-- Scholarship Portal
+- React
+- Node.js
+- Express.js
+- MongoDB Atlas
+- OpenAI API
+- JWT Authentication
 
 ---
 
-## 🔮 Future Improvements
+## 🔮 Future Enhancements
 
-- Dark/Light Theme
+- Light & Dark Theme
 - Email Notifications
-- Scholarship Recommendation Engine
-- Real-time Chat
+- Personalized Scholarship Recommendation Engine
+- Real-Time Chat
 - Mobile Application
-- Analytics Dashboard
+- Advanced Analytics Dashboard
 
 ---
 
@@ -182,4 +179,4 @@ VITE_API_URL=
 
 ---
 
-## ⭐ If you found this project interesting, consider giving it a star.
+⭐ **If you found this project interesting, consider giving it a star!**
